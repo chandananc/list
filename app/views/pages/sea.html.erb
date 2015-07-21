@@ -1,0 +1,56 @@
+<br>
+<br>
+<br>
+<div class="container">
+    <div class="rem_searchtext_input">
+      <input class="inputbox" type="text" name="searchtext" size="20" maxlength="20" placeholder="Search Keywords">
+     </div> <br>
+     
+    
+                       <div >Search Courses</div>
+                       <%= text_field_tag :search, nil, placeholder: 'search' %>
+                      
+    
+     <p>
+    <%= f.label :category_id %>
+    <%= f.select :category_id, Category.all.map{|f| [f.name,f.id]} %>
+  </p>
+   
+    
+    <br>
+
+    <div class="col_box_1">
+        <div class="box_from">
+            <span class="col_01">Check In</span>
+            <input type="text" id="search_date_from" name="search_date_from" class="hasDatepicker">
+        </div> <br>
+        <div class="box_until">
+            <span class="col_01">Check Out</span>
+            <input type="text" id="search_date_until" name="search_date_until" class="hasDatepicker"></div>
+        </div> <br>
+    <div class="col_box_1">
+        <span class="price_label">Price</span>
+        <div id="rem_slider" class="ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all" aria-disabled="false"><div class="ui-slider-range ui-widget-header" style="left: 0%; width: 100%;"></div><a class="ui-slider-handle ui-state-default ui-corner-all" href="#" style="left: 0%;"></a><a class="ui-slider-handle ui-state-default ui-corner-all" href="#" style="left: 100%;"></a></div>
+            <div class="pricefrom_2">
+               <span>from</span>
+               <input type="text" id="pricefrom" name="pricefrom2" value="0">
+              </div> <br>
+                <div class="priceto_2">
+                    <span>to</span>
+                    <input type="text" id="priceto" name="priceto2" value="750000">
+                </div> <br>
+                <div style="clear: both;"></div>
+            </div>
+                    <div class="container_box_2 container_box_3">
+           
+          
+        </div>
+        <div class="col_box_button">
+        <%= form_tag search_items_path, method: :get do |f| %>
+        <%= submit_tag '>' %>
+         <% end %>
+        </div>
+        </div>
+    </div>
+    </div>
+  </div>

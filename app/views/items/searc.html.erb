@@ -1,0 +1,54 @@
+<%= form_for(@item) do |f| %>
+  <% if @item.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@item.errors.count, "error") %> prohibited this item from being saved:</h2>
+
+      <ul>
+      <% @item.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :sqft %><br>
+    <%= f.text_field :sqft %>
+  </div>
+  <div class="field">
+    <%= f.label :rooms %><br>
+    <%= f.number_field :rooms %>
+  </div>
+  <div class="field">
+    <%= f.label :built_year %><br>
+    <%= f.number_field :built_year %>
+  </div>
+  <div class="field">
+    <%= f.label :cost %><br>
+    <%= f.text_field :cost %>
+  </div>
+  <p>
+    <%= f.label :category_id %>
+    <%= f.select :category_id, Category.all.map{|f| [f.name,f.id]} %>
+  </p>
+  <p>
+     <%= f.label :type_id %>
+    <%= f.select :type_id, Type.all.map{|f| [f.listing_type, f.id]} %>
+  </p>
+   <p>
+     <%= f.label :status_id %>
+    <%= f.select :status_id, Status.all.map{|f| [f.listing_status,f.id]} %>
+  </p>
+  <div class="field">
+    <%= f.label :address %><br>
+    <%= f.text_field :address %>
+  </div>
+ 
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

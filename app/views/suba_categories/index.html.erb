@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Suba Categories</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Listing type</th>
+      <th>Category</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @suba_categories.each do |suba_category| %>
+      <tr>
+        <td><%= suba_category.listing_type %></td>
+        <td><%= suba_category.category_id %></td>
+        <td><%= link_to 'Show', suba_category %></td>
+        <td><%= link_to 'Edit', edit_suba_category_path(suba_category) %></td>
+        <td><%= link_to 'Destroy', suba_category, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Suba category', new_suba_category_path %>

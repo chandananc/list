@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Subcategory2s</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Listing status</th>
+      <th>Category</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @subcategory2s.each do |subcategory2| %>
+      <tr>
+        <td><%= subcategory2.listing_status %></td>
+        <td><%= subcategory2.category_id %></td>
+        <td><%= link_to 'Show', subcategory2 %></td>
+        <td><%= link_to 'Edit', edit_subcategory2_path(subcategory2) %></td>
+        <td><%= link_to 'Destroy', subcategory2, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Subcategory2', new_subcategory2_path %>

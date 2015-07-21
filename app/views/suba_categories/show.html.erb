@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Listing type:</strong>
+  <%= @suba_category.listing_type %>
+</p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @suba_category.category_id %>
+</p>
+
+<%= link_to 'Edit', edit_suba_category_path(@suba_category) %> |
+<%= link_to 'Back', suba_categories_path %>
