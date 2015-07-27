@@ -1,14 +1,4 @@
 class PagesController < ApplicationController
-  
-  
-  
-  def realestate
+  def index
   end
-    
-  def sea
-    
-  end
-
-
-  
 end

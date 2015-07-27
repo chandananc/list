@@ -1,6 +1,12 @@
 Rails.application.routes.draw do
   
   
+ 
+ 
+
+  get 'pages/index'
+
+  devise_for :users
   resources :types
   resources :statuses
   resources :subcategory2s
@@ -24,6 +30,8 @@ Rails.application.routes.draw do
  
  match '/sub1_categories/find_by_category', to: 'sub1_categories#find_by_category', via: :post
  
+ 
+  root 'welcome#index'
  
 end
 
